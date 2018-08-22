@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_activity_center_text_top_padding">15dp</dimen>
+    <dimen name="login_activity_mail_pass_text_left_right_padding">20dp</dimen>
+    <dimen name="login_activity_mail_pass_text_top_padding">10dp</dimen>
+    <dimen name="login_activity_login_btn_top_padding">10dp</dimen>
+    <dimen name="login_activity_frget_pswrd_txt_top_padding">10dp</dimen>
+    <dimen name="login_activity_login_with__txt_top_padding">35dp</dimen>
+    <dimen name="login_activity_fb_gle__btn_top_padding">25dp</dimen>
+    <dimen name="login_activity_sign_in__btn_top_padding">10dp</dimen>
+    <dimen name="login_activity_sifn_in__btn_right_padding">10dp</dimen>
+</resources>
