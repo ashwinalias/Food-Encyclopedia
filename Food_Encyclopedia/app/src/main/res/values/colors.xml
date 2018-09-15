@@ -6,4 +6,8 @@
     <color name="colorRed">#ff00</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorGreen">#00ff00</color>
+
+    <color name="text_title">#CC000000</color>
+    <color name="text_secondary">#8C000000</color>
+    <color name="light_blue">#03a9f4</color>
 </resources>

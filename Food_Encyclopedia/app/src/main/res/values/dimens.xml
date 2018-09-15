@@ -7,6 +7,18 @@
     <dimen name="login_activity_frget_pswrd_txt_top_padding">10dp</dimen>
     <dimen name="login_activity_login_with__txt_top_padding">35dp</dimen>
     <dimen name="login_activity_fb_gle__btn_top_padding">25dp</dimen>
+    <dimen name="login_activity_fb_login__btn_padding">10dp</dimen>
+    <dimen name="login_activity_g_login__btn_padding">10dp</dimen>
+    <dimen name="login_activity_g_login__btn_top_padding">0dp</dimen>
     <dimen name="login_activity_sign_in__btn_top_padding">10dp</dimen>
     <dimen name="login_activity_sifn_in__btn_right_padding">10dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">24dp</dimen>
+    <dimen name="nav_header_height">135dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="menu_heder">32dp</dimen>
+    <dimen name="menu_heder_margin">14</dimen>
 </resources>

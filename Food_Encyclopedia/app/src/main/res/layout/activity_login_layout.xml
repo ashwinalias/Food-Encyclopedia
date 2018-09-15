@@ -116,34 +116,42 @@
 
         <TextView
             android:textColor="@color/colorWhite"
-            android:paddingTop="@dimen/login_activity_login_with__txt_top_padding"
+            android:paddingTop="@dimen/login_activity_login_btn_top_padding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="------  Or Login with --------" />
 
-        <LinearLayout
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="320dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/login_activity_fb_gle__btn_top_padding"
+       >
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button_fb"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/login_activity_fb_gle__btn_top_padding"
-            android:weightSum="1">
+            android:layout_gravity="center_horizontal" />
 
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/login_button_fb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp" />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button_glge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue with google" />
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button_glge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="google"/>
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_login_mobile"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorRed"
+            android:text="Login with mobile"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
 
 
     </LinearLayout>

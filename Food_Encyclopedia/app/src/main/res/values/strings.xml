@@ -3,4 +3,21 @@
     <string name="facebook_app_id">511068292686376</string>
     <string name="fb_login_protocol_scheme">fb511068292686376</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--drawer menu-->
+    <string name="nav_profile">Profile</string>
+    <string name="nav_rate_review">Rate &amp; Review</string>
+    <string name="nav_location">Location</string>
+    <string name="nav_fet">Fet deals</string>
+    <string name="nav_your_order">Your order</string>
+    <string name="nav_saved_items">Saved Items</string>
+    <string name="nav_sign_out">Sign out</string>
+    <string name="nav_menu">MENU</string>
+    <string name="title_activity_main">MainActivity</string>
+
+
 </resources>
