@@ -12,9 +12,10 @@
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <FrameLayoutu
+    <FrameLayout
         android:layout_height="match_parent"
-        android:id="@+id/fragment_base"></FrameLayoutu>
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_base"></FrameLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

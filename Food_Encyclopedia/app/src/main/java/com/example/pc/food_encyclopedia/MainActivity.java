@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_profile) {
             // Handle the camera action
         } else if (id == R.id.nav_rate_review) {
-
+launchReviewPage();
         } else if (id == R.id.nav_location) {
 
         } else if (id == R.id.nav_fet_details) {
