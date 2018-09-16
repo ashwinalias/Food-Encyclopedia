@@ -20,5 +20,5 @@
     <dimen name="nav_header_height">135dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="menu_heder">32dp</dimen>
-    <dimen name="menu_heder_margin">14</dimen>
+    <dimen name="menu_heder_margin">14dp</dimen>
 </resources>
