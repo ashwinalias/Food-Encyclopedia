@@ -10,4 +10,5 @@
     <color name="text_title">#CC000000</color>
     <color name="text_secondary">#8C000000</color>
     <color name="light_blue">#03a9f4</color>
+    <color name="toolbar_bg">#141313</color>
 </resources>

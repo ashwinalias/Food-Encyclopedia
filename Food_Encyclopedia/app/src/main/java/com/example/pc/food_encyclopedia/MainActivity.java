@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.pc.food_encyclopedia.fragment.RateReveiwFragment;
+import com.example.pc.food_encyclopedia.fragment.RestaurantListFrgament;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,9 +33,17 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(null);
+            actionBar.setHomeButtonEnabled(false); // disable the button
+            actionBar.setDisplayHomeAsUpEnabled(false); // remove the left caret
+            actionBar.setDisplayShowHomeEnabled(false); // remove the icon
+        }
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        launchMainPage();
     }
 
     @Override
@@ -44,28 +54,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -86,7 +74,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_saved_items) {
 
-        }else if(id == R.id.nav_sign_out){
+        } else if (id == R.id.nav_sign_out) {
 
         }
 
@@ -95,10 +83,19 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void launchReviewPage()
-    {
-        FragmentTransaction transactin= getSupportFragmentManager().beginTransaction();
-        RateReveiwFragment rateReveiwFragment=new RateReveiwFragment();
+    private void launchMainPage() {
+        FragmentTransaction transactin = getSupportFragmentManager().beginTransaction();
+        RestaurantListFrgament restaurantListFrgament = new RestaurantListFrgament();
+        transactin.add(R.id.fragment_base, restaurantListFrgament);
+        transactin.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        //transactin.addToBackStack(null);
+        transactin.commit();
+
+    }
+
+    private void launchReviewPage() {
+        FragmentTransaction transactin = getSupportFragmentManager().beginTransaction();
+        RateReveiwFragment rateReveiwFragment = new RateReveiwFragment();
         transactin.replace(R.id.fragment_base, rateReveiwFragment);
         transactin.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         transactin.addToBackStack(null);
