@@ -58,8 +58,10 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         }
 
         public void bindRestaurant(Restaurant restaurant) {
-            mNameTextView.setText(restaurant.getName());
-            mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
+            if(restaurant != null) {
+                //mNameTextView.setText(restaurant.getName());
+               // mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
+            }
         }
     }
 }

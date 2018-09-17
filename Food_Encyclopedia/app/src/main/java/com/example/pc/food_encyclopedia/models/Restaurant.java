@@ -6,14 +6,14 @@ package com.example.pc.food_encyclopedia.models;
 
 public class Restaurant {
     private String name;
-    private String rating;
+    private int rating;
     private String mLocation;
 
     public String getName() {
         return name;
     }
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
