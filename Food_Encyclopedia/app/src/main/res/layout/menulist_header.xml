@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -39,7 +40,7 @@
         <RatingBar
             android:id="@+id/restaurant_rating"
             android:theme="@style/RatingBar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -47,10 +48,27 @@
             style="?attr/ratingBarStyleSmall"
             android:rating="2"/>
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/restaurant_rating"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/restaurant_rating"
+            android:text="(215)" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/cart_ic" />
+
     </RelativeLayout>
 
-    <TextView
+    <CheckBox
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@drawable/right_arrow_img"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"/>
 </LinearLayout>

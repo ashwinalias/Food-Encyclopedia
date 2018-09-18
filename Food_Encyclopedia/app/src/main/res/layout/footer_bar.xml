@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:background="@color/toolbar_bg">
+    android:background="@color/toolbar_bg"
+    android:orientation="horizontal"
+    android:padding="@dimen/dimen_10dp">
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/food_text"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:gravity="center_vertical"
+        android:id="@+id/textView"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView"
+        android:gravity="center_vertical"
+        android:text="@string/encyclopedia_text"
+        android:textAllCaps="true"
+        android:textColor="@color/app_title_font_color"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="@dimen/dimen_30dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:src="@drawable/footer_threedots_img"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

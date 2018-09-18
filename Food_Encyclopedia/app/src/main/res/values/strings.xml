@@ -18,6 +18,9 @@
     <string name="nav_sign_out">Sign out</string>
     <string name="nav_menu">MENU</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="search_text">Search</string>
+    <string name="food_text">food</string>
+    <string name="encyclopedia_text">encyclopedia</string>
 
 
 </resources>

@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/serach_bar_bg"
         android:layout_margin="@dimen/dimen_10dp"
-        android:maxLines="1"/>
+        android:maxLines="1"
+        android:hint="@string/search_text"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/restaurant_list"

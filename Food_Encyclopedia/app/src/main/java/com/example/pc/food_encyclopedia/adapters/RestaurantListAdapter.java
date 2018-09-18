@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.pc.food_encyclopedia.R;
@@ -47,9 +48,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         ImageView mRestaurantImageView;
 
         TextView mNameTextView;
-        TextView mSecondNameTextView;
-        TextView mLocation;
-        TextView mRatingTextView;
+        RatingBar mRateBar;
         private Context mContext;
 
         public RestaurantViewHolder(View itemView) {

@@ -5,6 +5,7 @@
     android:layout_margin="@dimen/dimen_5dp"
     android:background="@color/toolbar_bg">
     <Button
+        android:id="@+id/back_button"
         android:layout_width="@dimen/dimen_50dp"
         android:layout_height="@dimen/dimen_50dp"
         android:background="@drawable/back_icon"
@@ -33,6 +34,7 @@
         android:layout_gravity="center|right"/>
     </LinearLayout>
     <Button
+        android:id="@+id/menu_button"
         android:layout_width="@dimen/dimen_50dp"
         android:layout_height="@dimen/dimen_50dp"
         android:background="@drawable/menu_ic"
