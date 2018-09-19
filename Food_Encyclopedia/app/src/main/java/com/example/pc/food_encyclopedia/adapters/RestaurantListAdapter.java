@@ -10,6 +10,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.pc.food_encyclopedia.R;
+import com.example.pc.food_encyclopedia.customviews.AppViewHolder;
+import com.example.pc.food_encyclopedia.fragment.RestaurantListFrgament;
+import com.example.pc.food_encyclopedia.listeners.onRecycleViewItemCicked;
 import com.example.pc.food_encyclopedia.models.Restaurant;
 
 import java.util.ArrayList;
@@ -21,10 +24,12 @@ import java.util.ArrayList;
 public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder> {
     private ArrayList<Restaurant> mRestaurants = new ArrayList<>();
     private Context mContext;
+    private onRecycleViewItemCicked mOnRecycleViewItemCicked;
 
-    public RestaurantListAdapter(Context context, ArrayList<Restaurant> restaurants) {
+    public RestaurantListAdapter(Context context, ArrayList<Restaurant> restaurants, onRecycleViewItemCicked onRecycleViewItemCicked) {
         mContext = context;
         mRestaurants = restaurants;
+        this.mOnRecycleViewItemCicked = onRecycleViewItemCicked;
     }
 
     @Override
@@ -44,7 +49,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         return mRestaurants.size();
     }
 
-    public class RestaurantViewHolder extends RecyclerView.ViewHolder {
+    public class RestaurantViewHolder extends AppViewHolder {
         ImageView mRestaurantImageView;
 
         TextView mNameTextView;
@@ -54,12 +59,19 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         public RestaurantViewHolder(View itemView) {
             super(itemView);
             mContext = itemView.getContext();
+            setFonts(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mOnRecycleViewItemCicked.onItemCLicked(getAdapterPosition());
+                }
+            });
         }
 
         public void bindRestaurant(Restaurant restaurant) {
-            if(restaurant != null) {
+            if (restaurant != null) {
                 //mNameTextView.setText(restaurant.getName());
-               // mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
+                // mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
             }
         }
     }

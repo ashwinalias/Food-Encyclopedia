@@ -13,19 +13,9 @@
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:gravity="center_vertical"
-        android:id="@+id/textView"
+        android:id="@+id/footer_text"
         android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/textView"
-        android:gravity="center_vertical"
-        android:text="@string/encyclopedia_text"
-        android:textAllCaps="true"
-        android:textColor="@color/app_title_font_color"
-        android:textStyle="bold"/>
 
     <ImageView
         android:layout_width="@dimen/dimen_30dp"

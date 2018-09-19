@@ -3,6 +3,7 @@ package com.example.pc.food_encyclopedia.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.example.pc.food_encyclopedia.R;
 import com.example.pc.food_encyclopedia.adapters.RestaurantListAdapter;
 import com.example.pc.food_encyclopedia.customviews.CustomItemDecoration;
+import com.example.pc.food_encyclopedia.listeners.onRecycleViewItemCicked;
 import com.example.pc.food_encyclopedia.models.Restaurant;
 
 import java.util.ArrayList;
@@ -22,7 +25,7 @@ import java.util.ArrayList;
  * Created by user on 16-09-2018.
  */
 
-public class RestaurantListFrgament extends BaseAbstractFragment {
+public class RestaurantListFrgament extends BaseAbstractFragment implements onRecycleViewItemCicked {
     private AutoCompleteTextView mSearchAutoCompleteTextView;
     private RecyclerView mRestaurantList;
     private RestaurantListAdapter mRestaurantListAdapter;
@@ -39,7 +42,7 @@ public class RestaurantListFrgament extends BaseAbstractFragment {
     }
 
     private void initSampleData() {
-        mRestaurantListAdapter = new RestaurantListAdapter(getActivity(), getSampleList());
+        mRestaurantListAdapter = new RestaurantListAdapter(getActivity(), getSampleList(),this);
         mRestaurantList.setAdapter(mRestaurantListAdapter);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -61,5 +64,17 @@ public class RestaurantListFrgament extends BaseAbstractFragment {
     private void initiews(View v) {
         mSearchAutoCompleteTextView = v.findViewById(R.id.restaurant_search);
         mRestaurantList = v.findViewById(R.id.restaurant_list);
+    }
+
+    @Override
+    public void onItemCLicked(int position) {
+        Toast.makeText(getActivity(), ""+position, Toast.LENGTH_SHORT).show();
+        FragmentTransaction transactin = getActivity().getSupportFragmentManager().beginTransaction();
+        RestaurantMenuListFragment restaurantMenuListFragment = new RestaurantMenuListFragment();
+        transactin.replace(R.id.fragment_base, restaurantMenuListFragment);
+        transactin.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transactin.addToBackStack(null);
+        transactin.commit();
+
     }
 }

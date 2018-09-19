@@ -9,13 +9,17 @@
         android:layout_width="@dimen/dimen_100dp"
         android:layout_height="@dimen/dimen_100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/restaurant_sample_img" />
+        android:src="@drawable/restaurant_sample_img"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="@dimen/dimen_5dp">
+        android:padding="@dimen/dimen_5dp"
+        android:focusable="false"
+        android:clickable="false">
 
         <TextView
             android:id="@+id/restaurantNameTextView"
@@ -23,8 +27,11 @@
             android:layout_height="wrap_content"
             android:text="ZAM ZAM"
             android:textColor="@color/restaurant_list_title"
-            android:textSize="@dimen/dimen_20sp"
-            android:textStyle="bold" />
+            android:textSize="@dimen/dimen_18sp"
+            android:textStyle="bold"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_marginTop="@dimen/dimen_10dp"/>
 
         <TextView
             android:id="@+id/categoryTextView"
@@ -34,23 +41,29 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/restaurantNameTextView"
             android:text="One Cuisine Type"
-            android:textSize="@dimen/dimen_16sp" />
+            android:textSize="@dimen/dimen_12sp"
+            android:focusable="false"
+            android:clickable="false"/>
 
         <RatingBar
             android:id="@+id/restaurant_rating"
             android:theme="@style/RatingBar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:numStars="5"
             style="?attr/ratingBarStyleSmall"
-            android:rating="2"/>
+            android:rating="2"
+            android:focusable="false"
+            android:clickable="false"/>
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@drawable/right_arrow_img"/>
+        android:background="@drawable/right_arrow_img"
+        android:focusable="false"
+        android:clickable="false"/>
 </LinearLayout>

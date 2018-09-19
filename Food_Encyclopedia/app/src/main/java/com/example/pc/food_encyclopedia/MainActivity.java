@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.text.Html;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,15 +20,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.pc.food_encyclopedia.constants.Constants;
 import com.example.pc.food_encyclopedia.fragment.RateReveiwFragment;
 import com.example.pc.food_encyclopedia.fragment.RestaurantListFrgament;
-import com.example.pc.food_encyclopedia.fragment.RestaurantMenuListFragment;
+import com.example.pc.food_encyclopedia.listeners.OnFragmentActions;
+import com.example.pc.food_encyclopedia.util.TypeUtils;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener,OnFragmentActions {
     private Button mBackButton, mMenuButton;
     private DrawerLayout mDrawer;
+    private TextView mTitle,footerTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,11 @@ public class MainActivity extends AppCompatActivity
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mBackButton = toolbar.findViewById(R.id.back_button);
         mMenuButton = toolbar.findViewById(R.id.menu_button);
+        mTitle = toolbar.findViewById(R.id.title);
+        footerTextView = findViewById(R.id.footer_text);
+        TypeUtils.setBaseFontviews(this,mTitle);
+        TypeUtils.setBaseFontviews(this,footerTextView);
+        setFooterTitle();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, mDrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawer.addDrawerListener(toggle);
@@ -60,6 +70,11 @@ public class MainActivity extends AppCompatActivity
         mBackButton.setOnClickListener(this);
         mMenuButton.setOnClickListener(this);
         launchMainPage();
+    }
+
+    private void setFooterTitle() {
+        String sampleText = "<font color='"+ Constants.ColorConstants.WHITE+"'>FOOD </font><font color='"+Constants.ColorConstants.APP_GREEN_COLOR+"'>ENCYCLOPEIDA</font>";
+        footerTextView.setText(Html.fromHtml(sampleText), TextView.BufferType.SPANNABLE);
     }
 
     @Override
@@ -100,7 +115,7 @@ public class MainActivity extends AppCompatActivity
 
     private void launchMainPage() {
         FragmentTransaction transactin = getSupportFragmentManager().beginTransaction();
-        RestaurantMenuListFragment restaurantListFrgament = new RestaurantMenuListFragment();
+        RestaurantListFrgament restaurantListFrgament = new RestaurantListFrgament();
         transactin.add(R.id.fragment_base, restaurantListFrgament);
         transactin.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         //transactin.addToBackStack(null);
@@ -131,5 +146,10 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         }
+    }
+
+    @Override
+    public void onChangeTitle(String title, String scondaryTitle) {
+
     }
 }
