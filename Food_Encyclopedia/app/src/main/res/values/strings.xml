@@ -21,6 +21,9 @@
     <string name="search_text">Search</string>
     <string name="food_text">food</string>
     <string name="encyclopedia_text">encyclopedia</string>
+    <string name="choose_ur_taste">choose your \n taste</string>
+    <string name="get_ur_food_str">GET YOUR FOOD DELIVERED TO YOUR DOORSTEP BY</string>
+    <string name="get_delivered">get delivered</string>
 
 
 </resources>

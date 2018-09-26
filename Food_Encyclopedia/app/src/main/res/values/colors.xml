@@ -16,4 +16,5 @@
     <color name="divider_grey">#b5b5b5</color>
     <color name="rating_bar_selected">#f35c1f</color>
     <color name="rating_bar">#808080</color>
+    <color name="rounded_corner_red">#fe3c3c</color>
 </resources>

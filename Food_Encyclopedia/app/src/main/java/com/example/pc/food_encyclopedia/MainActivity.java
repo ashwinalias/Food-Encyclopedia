@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.pc.food_encyclopedia.constants.Constants;
+import com.example.pc.food_encyclopedia.fragment.CategoryListViewFragment;
 import com.example.pc.food_encyclopedia.fragment.RateReveiwFragment;
 import com.example.pc.food_encyclopedia.fragment.RestaurantListFrgament;
 import com.example.pc.food_encyclopedia.listeners.OnFragmentActions;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity
 
     private void launchMainPage() {
         FragmentTransaction transactin = getSupportFragmentManager().beginTransaction();
-        RestaurantListFrgament restaurantListFrgament = new RestaurantListFrgament();
+        CategoryListViewFragment restaurantListFrgament = new CategoryListViewFragment();
         transactin.add(R.id.fragment_base, restaurantListFrgament);
         transactin.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         //transactin.addToBackStack(null);
